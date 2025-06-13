@@ -153,3 +153,11 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
   border-left: 4px solid #ff6b6b;
 }
+
+.progress .item {
+  border-left-color: #4ecdc4;
+}
+
+.done .item {
+  border-left-color: #1dd1a1;
+}
