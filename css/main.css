@@ -386,3 +386,54 @@ body {
     font-size: 2.2rem;
   }
 }
+
+/* Анимации */
+@keyframes graphite-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 5px 20px rgba(106, 17, 203, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes input-highlight {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(106, 17, 203, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(106, 17, 203, 0);
+  }
+}
