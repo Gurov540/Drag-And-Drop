@@ -15,4 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
       taskInput.classList.remove("task-input-highlight");
     }, 1500);
   }, 500);
+
+  //обновление счтчиков задач
+  function updateTaskCounts() {
+    document.querySelectorAll(".column").forEach((column) => {
+      const items = column.querySelector(".items");
+      const count = items.querySelectorAll(".item").length;
+      column.querySelector(".task-count").textContent = count;
+    });
+  }
 });
