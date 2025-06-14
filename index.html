@@ -12,89 +12,96 @@
   </head>
   <body>
     <div class="gradient-bg"></div>
-    <div class="content">
-      <header class="header">
-        <h1><i class="fas fa-tasks"></i>Drag-And-Drop Канбан-доска</h1>
-        <p>Создавайте задачи и отслеживайте свой прогресс.</p>
-      </header>
-      <div class="container">
-        <!-- //Список задач -->
-        <div class="colomn todo">
-          <div class="colomn-header">
-            <h2 class="colomn-title">
-              <i class="fas fa-plus-circle"></i> Задачи
-            </h2>
-            <div class="task-count">0</div>
-          </div>
-          <div class="item" id="todo-items"></div>
-          <div class="add-task">
-            <input
-              type="text"
-              id="task-input"
-              placeholder="Введите новую задачу..."
-            />
-            <button id="add-task-btn">
-              <i class="fas fa-plus"></i> Добавить
-            </button>
-          </div>
+
+    <header class="header">
+      <h1><i class="fas fa-tasks"></i>Drag-And-Drop Канбан-доска</h1>
+      <p>Создавайте задачи и отслеживайте свой прогресс.</p>
+    </header>
+
+    <div class="container">
+      <!-- список задач -->
+      <div class="colomn todo">
+        <div class="colomn-header">
+          <h2 class="colomn-title">
+            <i class="fas fa-plus-circle"></i> Задачи
+          </h2>
+          <div class="task-count">0</div>
         </div>
-        <!-- //Список выполняемых задач -->
-        <div class="colomn progress">
-          <div class="colomn-header">
-            <h2 class="colomn-title">
-              <i class="fas fa-sync-alt"></i> В процессе
-            </h2>
-            <div class="task-count">0</div>
-          </div>
-          <div class="items" id="progress-items"></div>
+        <div class="item" id="todo-items">
+          <!-- Задачи тута -->
         </div>
-        <!-- //Список выполненых задач -->
-        <div class="colomn done">
-          <div class="colomn-header">
-            <h2 class="colomn-title">
-              <i class="fas fa-check-circle"></i> Готово
-            </h2>
-            <div class="task-count">0</div>
-          </div>
-          <div class="items" id="done-items"></div>
+        <div class="add-task">
+          <input
+            type="text"
+            id="task-input"
+            placeholder="Введите новую задачу..."
+          />
+          <button id="add-task-btn">
+            <i class="fas fa-plus"></i> Добавить
+          </button>
         </div>
       </div>
-      <!-- //инструкция -->
-      <div class="instructions">
-        <h2><i class="fas fa-graduation-cap"></i> Как использовать доску</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Создайте задачу</h3>
-            <p>
-              Введите задачу в поле ввода в колонке "Задачи" и нажмите
-              "Добавить". Задача появится в виде карточки в колонке "Задачи".
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>Перетащите в "В процессе"</h3>
-            <p>
-              Когда вы начинаете работу над задачей, перетащите её карточку из
-              "Задачи" в колонку "В процессе".
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Переместить в готово</h3>
-            <p>
-              После завершения задачи, перетащите её карточку в колонку
-              "Готово". Это поможет визуализировать ваш прогресс.
-            </p>
-          </div>
-          <div class="step">
-            <div class="step-number">4</div>
-            <h3>Управление задачами</h3>
-            <p>
-              Нажмите на значек "✕" в правом верхнем углу задачи, чтобы удалить
-              её. Вы также можете редактировать задачу двойным кликом.
-            </p>
-          </div>
+      <!-- Список выполняемых задач -->
+      <div class="colomn progress">
+        <div class="colomn-header">
+          <h2 class="colomn-title">
+            <i class="fas fa-sync-alt"></i> В процессе
+          </h2>
+          <div class="task-count">0</div>
+        </div>
+        <div class="items" id="progress-items">
+          <!-- выполняемые задачи тута -->
+        </div>
+      </div>
+      <!-- Список выполненых задач -->
+      <div class="colomn done">
+        <div class="colomn-header">
+          <h2 class="colomn-title">
+            <i class="fas fa-check-circle"></i> Готово
+          </h2>
+          <div class="task-count">0</div>
+        </div>
+        <div class="items" id="done-items">
+          <!-- выпоненые задачи тута -->
+        </div>
+      </div>
+    </div>
+
+    <!-- инструкция -->
+    <div class="instructions">
+      <h2><i class="fas fa-graduation-cap"></i> Как использовать доску</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Создайте задачу</h3>
+          <p>
+            Введите задачу в поле ввода в колонке "Задачи" и нажмите "Добавить".
+            Задача появится в виде карточки в колонке "Задачи".
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Перетащите в "В процессе"</h3>
+          <p>
+            Когда вы начинаете работу над задачей, перетащите её карточку из
+            "Задачи" в колонку "В процессе".
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Переместить в готово</h3>
+          <p>
+            После завершения задачи, перетащите её карточку в колонку "Готово".
+            Это поможет визуализировать ваш прогресс.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Управление задачами</h3>
+          <p>
+            Нажмите на значек "✕" в правом верхнем углу задачи, чтобы удалить
+            её. Вы также можете редактировать задачу двойным кликом.
+          </p>
         </div>
       </div>
     </div>
