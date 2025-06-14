@@ -3,28 +3,66 @@
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  position: relative;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.content {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #1a1a1a,
+    #2d2d2d,
+    #3c3c3c,
+    #4d4d4d,
+    #3c3c3c,
+    #2d2d2d,
+    #1a1a1a
+  );
+  background-size: 400% 400%;
+  animation: graphite-animation 16s infinite;
+  z-index: -1;
+}
+
+.gradient-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    transparent 10%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
 }
 
 .header {
   text-align: center;
   margin-bottom: 30px;
-  color: #fff;
+  color: #f0f0f0;
   width: 100%;
   min-width: 1200px;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 .header h1 {
   font-size: 2.8rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 .header p {
@@ -32,6 +70,7 @@ body {
   opacity: 0.9;
   max-width: 600px;
   margin: 0 auto;
+  color: #ccc;
 }
 
 .container {
@@ -40,19 +79,28 @@ body {
   width: 100%;
   max-width: 1200px;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .column {
-  background-color: rgba(255, 255, 255, 0.92);
+  background-color: rgba(40, 40, 40, 0.85);
   border-radius: 12px;
   padding: 20px;
   width: 100%;
   max-width: 350px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   min-height: 600px;
-  transition: transform 0.3 ease;
+  transition: transform 0.3 ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+}
+
+.column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7);
+  background-color: rgba(50, 50, 50, 0.9);
 }
 
 .colomn-header {
@@ -61,7 +109,7 @@ body {
   align-items: center;
   padding-bottom: 15px;
   margin-bottom: 15px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(150, 150, 150, 0.2);
 }
 
 .colomn-title {
@@ -70,6 +118,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #fff;
 }
 
 .task-count {
@@ -117,15 +166,20 @@ body {
 }
 
 .item {
-  background-color: #fff;
+  background: linear-gradient(
+    to right,
+    rgba(50, 50, 50, 0.9),
+    rgba(60, 60, 60, 0.9)
+  );
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 15px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   cursor: grab;
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s;
   border-left: 4px solid #ff6b6b;
+  color: #f0f0f0;
 }
 
 .progress .item {
@@ -138,8 +192,12 @@ body {
 
 .item:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  background-color: #f9f9f9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to right,
+    rgba(55, 55, 55, 0.9),
+    rgba(65, 65, 65, 0.9)
+  );
 }
 
 .item.dragging {
@@ -151,24 +209,46 @@ body {
   display: flex;
   margin-top: 20px;
   gap: 5px;
+  width: 100%;
+}
+
+.add-task input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(60, 60, 60, 0.8);
+  transition: all 0.3s;
+  color: #f0f0f0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+
+.add-task input::placeholder {
+  color: #999;
 }
 
 .add-task input:focus {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 0 2px #6a11cb;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 2px #6a11cb;
+  background-color: rgba(70, 70, 70, 0.8);
 }
 
 .add-task button {
   background-color: #ff6b6b;
   color: #fff;
   border: none;
-  padding: 12px 10px;
+  padding: 12px 15px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   gap: 5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .add-task button:hover {
@@ -176,23 +256,42 @@ body {
   transform: scale(-2px);
 }
 
+.delete-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  column-rule: #aaa;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
 .delete-btn:hover {
   color: #ff5252;
 }
 
 .over {
-  background-color: rgba(106, 17, 203, 0.1);
+  background-color: rgba(106, 17, 203, 0.15);
   border: 2px dashed #6a11cb;
 }
 
 .instructions {
-  background-color: #fff;
+  background: linear-gradient(
+    to bottom,
+    rgba(50, 50, 50, 0.9),
+    rgba(40, 40, 40, 0.9)
+  );
   border-radius: 12px;
   padding: 25px;
   margin-top: 30px;
   width: 100%;
   max-width: 1200px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  position: relative;
+  z-index: 2;
 }
 
 .instructions h2 {
@@ -204,6 +303,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .steps {
@@ -215,24 +315,27 @@ body {
 .step {
   flex: 1;
   min-width: 250px;
-  background-color: rgba(106, 17, 203, 0.05);
+  background-color: rgba(30, 30, 30, 0.7);
   padding: 20px 20px 20px 65px;
   border-radius: 8px;
   border-left: 4px solid #6a11cb;
   position: relative;
-  transition: transform 0.3 ease;
+  transition: all 0.3 ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .step:hover {
   transform: translateY(-5px);
-  background: rgba(106, 17, 203, 0.08);
+  background: rgba(40, 40, 40, 0.8);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .step h3 {
   margin-bottom: 10px;
-  color: #6a11cb;
+  color: #fff;
   font-size: 1.2rem;
   min-height: 40px;
+  display: flex;
   align-items: center;
 }
 
@@ -250,10 +353,10 @@ body {
   justify-content: center;
   font-weight: bold;
   font-size: 1.2rem;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 
 .step p {
-  color: #555;
+  color: #ccc;
   line-height: 1.5;
 }
