@@ -24,4 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
       column.querySelector(".task-count").textContent = count;
     });
   }
+
+  // Создание новой задачи
+  function createTask(text) {
+    const task = document.createElement("dic");
+    task.className = "item";
+    task.draggable = true;
+    task.innerHTML = `<button class="delete-btn">✕</button>
+                      <div class="task-text">${text}</div>
+                      `;
+  }
 });
