@@ -1,5 +1,12 @@
 @import url(./reset.css);
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
   min-height: 100vh;
   overflow-x: hidden;
@@ -103,7 +110,7 @@ body {
   background-color: rgba(50, 50, 50, 0.9);
 }
 
-.colomn-header {
+.column-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,7 +119,7 @@ body {
   border-bottom: 1px solid rgba(150, 150, 150, 0.2);
 }
 
-.colomn-title {
+.column-title {
   font-size: 1.5rem;
   font-weight: 600;
   display: flex;
@@ -133,15 +140,15 @@ body {
   font-size: 0.9rem;
 }
 
-.todo .colomn-title {
+.todo .column-title {
   color: #ff6b6b;
 }
 
-.progress .colomn-title {
+.progress .column-title {
   color: #4ecdc4;
 }
 
-.done .colomn-title {
+.done .column-title {
   color: #1dd1a1;
 }
 
