@@ -360,3 +360,29 @@ body {
   color: #ccc;
   line-height: 1.5;
 }
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .column {
+    max-width: 100%;
+    min-height: 450px;
+  }
+  .steps {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-task {
+    flex-direction: column;
+  }
+  .add-task button {
+    width: 100%;
+    justify-content: center;
+  }
+  .header h1 {
+    font-size: 2.2rem;
+  }
+}
