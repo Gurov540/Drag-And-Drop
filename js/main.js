@@ -33,5 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
     task.innerHTML = `<button class="delete-btn">✕</button>
                       <div class="task-text">${text}</div>
                       `;
+
+    // Добавление обработчика событий для перетаскивания
+    task.addEventListener("dragstart", dragStart);
+    task.addEventListener("dragend", dragEnd);
   }
 });
