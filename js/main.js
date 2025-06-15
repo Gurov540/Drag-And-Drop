@@ -46,5 +46,40 @@ document.addEventListener("DOMContentLoaded", () => {
         updateTaskCounts();
       }, 300);
     });
+
+    
+    // Редактирование по дабл клику
+    task.addEventListener("dblclick", () => {
+      const textElement = task.querySelector(".task-text");
+      const originalText = textElement.textContent:
+
+      const input = document.createElement('input');
+      input.type = "text";
+      input.value = originalText;
+      input.style.width = "100%";
+      input.style.padding = "8px";
+      input.style.border = "1px solid rgba(100, 100, 100, 0.3)";
+      input.style.borderRadius= "4px";
+      input.style.background = "rgba(60, 60, 60, 0.8)";
+      input.style.color = "#f0f0f0"
+
+      textElement.replaceWith(input);
+      input.focus();
+
+      input.addEventListener("blur", () => {
+        const newText = input.value.trim() || originalText;
+        const newTextElement = document.createElement("div");
+        newTextElement.className = "task-text";
+        newTextElement.textContent = newText;
+        input.replaceWith(newTextElement);
+      });
+
+      input.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          input.blur();
+        }
+      });
+    });
+    return task;
   }
 });
