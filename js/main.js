@@ -112,4 +112,17 @@ document.addEventListener("DOMContentLoaded", () => {
   taskInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") addTask();
   });
+
+  // Drag and  drop логика
+  let draggedItems = null;
+
+  function dragStart() {
+    draggedItem = this;
+    setTimeout(() => this.classList.add("dragging"), 0);
+  }
+
+  function dragEnd() {
+    this.classList.remove("dragging");
+    draggedItem = nell;
+  }
 });
