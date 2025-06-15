@@ -82,4 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     return task;
   }
+
+  // Добавление задачи
+  function addTask() {
+    const text = taskInput.value.trim();
+    if (text) {
+      const task = createTask(text);
+      todoItems.appendChild(task);
+      taskInput.value = "";
+      updateTaskCounts();
+      taskInput.focus();
+
+      // Анимация добавления
+      task.style.animation = "pulse 1s";
+      setTimeout(() => {
+        task.style.animation = "";
+      }, 1000);
+    } else {
+      // Подсветка пустого поля
+      taskInput.classList.add("task-input-highlight");
+      setTimeout(() => {
+        taskInput.classList.remove('task-input-highlight');
+      }, 1500);
+    }
+  }
 });
