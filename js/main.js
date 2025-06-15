@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Создание новой задачи
   function createTask(text) {
-    const task = document.createElement("dic");
+    const task = document.createElement("div");
     task.className = "item";
     task.draggable = true;
     task.innerHTML = `<button class="delete-btn">✕</button>
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     task.addEventListener("dragend", dragEnd);
 
     // Обработчик удаления
-    task.querySelector(".delet-btn").addEventListener("click", () => {
+    task.querySelector(".delete-btn").addEventListener("click", () => {
       task.style.animation = "fadeOut 0.3s forwards";
       setTimeout(() => {
         task.remove();
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function dragEnd() {
     this.classList.remove("dragging");
-    draggedItem = nell;
+    draggedItem = null;
   }
 
   // Обработчик событий для колонок
@@ -149,11 +149,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function dragDrop(e) {
     this.classList.remove("over");
     if (draggedItem) {
-      this.appendChild(draggedItems);
+      this.appendChild(draggedItem);
       updateTaskCounts();
 
       // Анимации успешного перемещения
-      draggedItem.style.animation = "puls 0.5s";
+      draggedItem.style.animation = "pulse 0.5s";
       setTimeout(() => {
         draggedItem.style.animation = "";
       }, 500);
