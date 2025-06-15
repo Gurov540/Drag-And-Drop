@@ -106,4 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1500);
     }
   }
+
+  // Обработчик событий дл добавления задачи
+  addTaskBtn.addEventListener("click", addTask);
+  taskInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") addTask();
+  });
 });
