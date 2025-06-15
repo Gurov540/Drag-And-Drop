@@ -47,21 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     });
 
-    
     // Редактирование по дабл клику
     task.addEventListener("dblclick", () => {
       const textElement = task.querySelector(".task-text");
-      const originalText = textElement.textContent:
+      const originalText = textElement.textContent;
 
-      const input = document.createElement('input');
+      const input = document.createElement("input");
       input.type = "text";
       input.value = originalText;
       input.style.width = "100%";
       input.style.padding = "8px";
       input.style.border = "1px solid rgba(100, 100, 100, 0.3)";
-      input.style.borderRadius= "4px";
+      input.style.borderRadius = "4px";
       input.style.background = "rgba(60, 60, 60, 0.8)";
-      input.style.color = "#f0f0f0"
+      input.style.color = "#f0f0f0";
 
       textElement.replaceWith(input);
       input.focus();
@@ -102,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Подсветка пустого поля
       taskInput.classList.add("task-input-highlight");
       setTimeout(() => {
-        taskInput.classList.remove('task-input-highlight');
+        taskInput.classList.remove("task-input-highlight");
       }, 1500);
     }
   }
@@ -114,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Drag and  drop логика
-  let draggedItems = null;
+  let draggedItem = null;
 
   function dragStart() {
     draggedItem = this;
@@ -124,5 +123,40 @@ document.addEventListener("DOMContentLoaded", () => {
   function dragEnd() {
     this.classList.remove("dragging");
     draggedItem = nell;
+  }
+
+  // Обработчик событий для колонок
+  columns.forEach((column) => {
+    column.addEventListener("dragover", dragOver);
+    column.addEventListener("dragenter", dragEnter);
+    column.addEventListener("dragleave", dragLeave);
+    column.addEventListener("drop", dragDrop);
+  });
+
+  function dragOver(e) {
+    e.preventDefault();
+  }
+
+  function dragEnter(e) {
+    e.preventDefault();
+    this.classList.add("over");
+  }
+
+  function dragLeave(e) {
+    this.classList.remove("over");
+  }
+
+  function dragDrop(e) {
+    this.classList.remove("over");
+    if (draggedItem) {
+      this.appendChild(draggedItems);
+      updateTaskCounts();
+
+      // Анимации успешного перемещения
+      draggedItem.style.animation = "puls 0.5s";
+      setTimeout(() => {
+        draggedItem.style.animation = "";
+      }, 500);
+    }
   }
 });
