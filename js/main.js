@@ -34,8 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
                       <div class="task-text">${text}</div>
                       `;
 
-    // Добавление обработчика событий для перетаскивания
+    // Обработчика событий для перетаскивания
     task.addEventListener("dragstart", dragStart);
     task.addEventListener("dragend", dragEnd);
+
+    // Обработчик удаления
+    task.querySelector(".delet-btn").addEventListener("click", () => {
+      task.style.animation = "fadeOut 0.3s forwards";
+      setTimeout(() => {
+        task.remove();
+        updateTaskCounts();
+      }, 300);
+    });
   }
 });
