@@ -95,7 +95,7 @@ body {
   border-radius: 12px;
   padding: 20px;
   width: 100%;
-  max-width: 350px;
+  max-width: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -239,7 +239,7 @@ body {
 }
 
 .add-task input:focus {
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 2px #6a11cb;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 2px #4a90e2;
   background-color: rgba(70, 70, 70, 0.8);
 }
 
@@ -281,8 +281,8 @@ body {
 }
 
 .over {
-  background-color: rgba(106, 17, 203, 0.15);
-  border: 2px dashed #6a11cb;
+  background-color: rgba(74, 144, 226, 0.15);
+  border: 2px dashed #4a90e2;
 }
 
 .instructions {
@@ -303,7 +303,7 @@ body {
 }
 
 .instructions h2 {
-  color: #6a11cb;
+  color: #4a90e2;
   margin-bottom: 25px;
   font-size: 1.8rem;
   text-align: center;
@@ -326,7 +326,7 @@ body {
   background-color: rgba(30, 30, 30, 0.7);
   padding: 20px 20px 20px 65px;
   border-radius: 8px;
-  border-left: 4px solid #6a11cb;
+  border-left: 4px solid #4a90e2;
   position: relative;
   transition: all 0.3 ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
@@ -351,7 +351,7 @@ body {
   position: absolute;
   top: 20px;
   left: 15px;
-  background-color: #6a11cb;
+  background-color: #4a90e2;
   color: #fff;
   border-radius: 50%;
   width: 40px;
@@ -415,7 +415,7 @@ body {
   }
   50% {
     transform: scale(1.03);
-    box-shadow: 0 5px 20px rgba(106, 17, 203, 0.5);
+    box-shadow: 0 5px 20px rgba(74, 144, 226, 0.5);
   }
   100% {
     transform: scale(1);
