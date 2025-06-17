@@ -108,6 +108,7 @@
     <div class="add-task-modal" id="task-modal">
       <div class="modal-content">
         <div class="modal-header">
+          <i class="fas fa-plus-circle"></i>
           <h2>Новая задача</h2>
         </div>
         <div class="modal-body">
@@ -115,37 +116,36 @@
             <!-- Task -->
             <div class="task-form-group">
               <!-- Name -->
-              <label for="task-title">task name</label>
-              <input
-                type="text"
-                id="task-title"
-                class="form-control"
-                required
-              />
+              <label for="task-title"
+                >task name
+                <input
+                  type="text"
+                  id="task-title"
+                  class="form-control"
+                  required
+              /></label>
+
               <!-- Description -->
-              <label for="task-title">description</label>
-              <textarea id="task-desc" class="form-control"> </textarea>
+              <label for="task-title"
+                >description
+                <textarea id="task-desc" class="form-control"> </textarea>
+              </label>
+
               <!-- group date/type -->
-              <div class="">
+              <div class="date-type">
                 <!-- Date -->
-                <label for="task-date">date</label>
-                <input type="date" id="task-date" class="form-control" />
+                <label for="task-date"
+                  >date<input type="date" id="task-date" class="form-control"
+                /></label>
+
                 <!-- Type -->
-                <label for="task-tyoe">type</label>
-                <select id="task-type" class="form-control">
-                  <option value="work">Work</option>
-                  <option value="study">Study</option>
-                  <option value="sport">Sport</option>
-                </select>
-              </div>
-            </div>
-            <!-- Subtask -->
-            <div class="subtask-form-group">
-              <div class="subtask-header">
-                <h3>Subtask</h3>
-                <button type="button" class="btn-add-subtask" id="add-subtask">
-                  <i class="fas fa plus"></i> Добавить родзадачу
-                </button>
+                <label for="task-tyoe"
+                  >type<select id="task-type" class="form-control">
+                    <option value="work">Work</option>
+                    <option value="study">Study</option>
+                    <option value="sport">Sport</option>
+                  </select></label
+                >
               </div>
             </div>
           </form>
