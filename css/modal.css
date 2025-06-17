@@ -1,1 +1,91 @@
-modal code
+.modal-content {
+  background: linear-gradient(
+    to bottom,
+    rgba(50, 50, 50, 0.95),
+    rgba(40, 40, 40, 0.95)
+  );
+  border-radius: 12px;
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  width: 50vw;
+  max-width: 50vw;
+  overflow: hidden;
+}
+
+.modal-header {
+  font-size: 1.8rem;
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.add-task-form {
+  display: flex;
+}
+
+.task-form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+  gap: 10px;
+}
+
+.task-form-group label {
+  display: block;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(60, 60, 60, 0.8);
+  color: #f0f0f0;
+  margin-top: 8px;
+  resize: none;
+}
+
+.date-type {
+  display: flex;
+  gap: 30px;
+}
+.date-type label {
+  flex: 1;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  gap: 10px;
+}
+
+.modal-footer button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-close-modal {
+  background-color: rgba(100, 100, 100, 0.3);
+  color: #ccc;
+}
+.btn-close-modal:hover {
+  color: #ff5252;
+}
+.btn-submit-modal {
+  background-color: #4a90e2;
+  color: #ccc;
+}
+.btn-submit-modal:hover {
+  background-color: #3a7bc8;
+}
