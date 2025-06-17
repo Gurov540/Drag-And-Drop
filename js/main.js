@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".column").forEach((column) => {
       const items = column.querySelector(".items");
       const count = items.querySelectorAll(".item").length;
-      column.querySelector(".task-count").textContent = count;
+      const taskCountEl = column.querySelector(".task-count");
+      taskCountEl.textContent = count;
     });
   }
 
