@@ -104,7 +104,65 @@
         </div>
       </div>
     </div>
-
+    <!-- Modal  -->
+    <div class="add-task-modal" id="task-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Новая задача</h2>
+        </div>
+        <div class="modal-body">
+          <form id="add-task-form">
+            <!-- Task -->
+            <div class="task-form-group">
+              <!-- Name -->
+              <label for="task-title">task name</label>
+              <input
+                type="text"
+                id="task-title"
+                class="form-control"
+                required
+              />
+              <!-- Description -->
+              <label for="task-title">description</label>
+              <textarea id="task-desc" class="form-control"> </textarea>
+              <!-- group date/type -->
+              <div class="">
+                <!-- Date -->
+                <label for="task-date">date</label>
+                <input type="date" id="task-date" class="form-control" />
+                <!-- Type -->
+                <label for="task-tyoe">type</label>
+                <select id="task-type" class="form-control">
+                  <option value="work">Work</option>
+                  <option value="study">Study</option>
+                  <option value="sport">Sport</option>
+                </select>
+              </div>
+            </div>
+            <!-- Subtask -->
+            <div class="subtask-form-group">
+              <div class="subtask-header">
+                <h3>Subtask</h3>
+                <button type="button" class="btn-add-subtask" id="add-subtask">
+                  <i class="fas fa plus"></i> Добавить родзадачу
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-close-modal">Close</button>
+          <button
+            type="submit"
+            form="add-task-form"
+            class="btn-submit-modal"
+            id="save-task"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
     <script src="./js/main.js"></script>
   </body>
 </html>
